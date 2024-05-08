@@ -1,11 +1,53 @@
-# Unity Custom Logger Utility
+# Singleton Patterns for Unity
 
-This tool represents a solution for centralized logging management across an entire software project. It enhances the script compilation process to integrate log statements seamlessly, ensuring a consistent and standardized approach to logging. Key features include:
+## Introduction
 
-1. **Automated Log Integration:** The tool intelligently injects log statements at critical junctures in the codebase during the compilation phase, streamlining the logging process.
+The Singleton package under the `com.Klazapp.Utility` namespace provides robust implementations of the Singleton pattern for Unity, including both a persistent and a standard version. These classes ensure that only one instance of a component exists throughout the lifecycle of the application, with the persistent variant also surviving across different scenes.
 
-2. **Configurable Log Severity Levels:** It offers granular control over log verbosity, allowing developers to adjust logging levels (such as debug, info, warning, and error) globally or for specific modules, tailoring the logging output to the needs of different environments and stages of development.
+## Features
 
-3. **Uniform Log Formatting:** By enforcing a uniform format for all log entries, the tool guarantees consistency in logging outputs. This format can encompass various elements such as timestamps, severity indicators, and contextual data, thereby facilitating easier log analysis and troubleshooting.
+- **MonoSingletonGlobal**: Standard singleton implementation that ensures only one instance of a component exists within the application.
+- **MonoPersistentSingletonGlobal**: Extends the standard singleton pattern to make the instance persist across multiple scenes without being destroyed.
+- **Automatic Instance Creation**: Automatically creates a new instance of the singleton object if one does not already exist.
+- **Simple Integration**: Easily integrate with any Unity project to manage singleton instances of various components.
 
-Overall, this tool is designed to optimize logging practices, improve code maintainability, and enhance the monitoring capabilities within a software development environment."
+## Dependencies
+
+- **Unity 2017.1 or Newer**: Required for the latest MonoBehaviour and GameObject API features.
+
+## Compatibility
+
+Designed to work universally across all Unity projects, regardless of the rendering pipeline or platform.
+
+| Compatibility | URP | BRP | HDRP |
+|---------------|-----|-----|------|
+| Compatible    | ✔️   | ✔️   | ✔️    |
+
+## Installation
+
+1. Download the Singleton package scripts from the [GitHub repository](https://github.com/klazapp/Unity-Singleton-Public.git) or via the Unity Package Manager.
+2. Add the scripts to your Unity project within any scripts directory.
+
+## Usage
+
+To utilize the singleton pattern, inherit your class from `MonoSingletonGlobal<T>` or `MonoPersistentSingletonGlobal<T>` where `T` is your component class. Access your singleton instance via `Instance` property:
+
+```csharp
+public class GameManager : MonoSingletonGlobal<GameManager>
+{
+    void Start()
+    {
+        // Use the instance
+        Debug.Log("GameManager started");
+    }
+}
+```
+
+## To-Do List (Future Features)
+
+- [ ] Implement thread-safe initialization to enhance reliability in multi-threaded scenarios.
+- [ ] Expand the utility to include non-MonoBehaviour singletons for broader use cases.
+
+## License
+
+This utility is released under the MIT License, permitting free use, modification, and distribution within your projects.
