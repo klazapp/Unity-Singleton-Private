@@ -9,5 +9,13 @@
     "file",
     "data"
   ],
-  "category": "Utility"
+ "category": "Utility",
+    "author": {
+      "name": "Klazapp",
+      "email": "klazapp@klazapp.com",
+      "url": "https://www.klazapp.com"
+    },
+    "documentationUrl": "https://github.com/klazapp/Unity-Singleton-Private",
+    "changelogUrl": "https://github.com/klazapp/Unity-Singleton-Private",
+    "licensesUrl": "https://github.com/klazapp/Unity-Singleton-Private"
 }
