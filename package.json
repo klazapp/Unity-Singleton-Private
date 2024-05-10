@@ -1,6 +1,6 @@
 {
   "name": "com.klazapp.singleton",
-  "displayName": "Unity Singleton",
+  "displayName": "Unity Singleton Private",
   "version": "1.0.0",
   "unity": "2022.3",
   "description": "Streamline your Unity projects with Klazapp's Singleton Patterns package, offering robust singleton implementations for ensuring single instance management across your entire application. Includes both a standard singleton for application-wide uniqueness and a persistent variant for maintaining instance continuity across scenes. Ideal for managing core game components like Game Managers seamlessly.",
